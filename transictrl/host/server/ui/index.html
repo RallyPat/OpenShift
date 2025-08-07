@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TransiCtrl</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="min-h-screen bg-slate-950 text-slate-100">
+  <div class="max-w-6xl mx-auto p-6">
+    <header class="flex items-center justify-between">
+      <h1 class="text-2xl font-semibold">TransiCtrl</h1>
+      <span id="conn" class="text-sm text-slate-400">Disconnected</span>
+    </header>
+    <main class="mt-6 grid gap-6 md:grid-cols-3">
+      <section class="md:col-span-2 bg-slate-900/50 rounded-xl border border-slate-800 p-4">
+        <h2 class="font-medium mb-2">Calibration</h2>
+        <textarea id="calib" class="w-full h-64 bg-slate-950 border border-slate-800 rounded p-2 font-mono text-sm" placeholder="Paste calibration JSON/TOML here..."></textarea>
+        <div class="mt-3 flex gap-2">
+          <button id="push" class="px-3 py-2 bg-emerald-600 hover:bg-emerald-500 rounded text-sm">Push to Device</button>
+          <button id="load-demo" class="px-3 py-2 bg-slate-700 hover:bg-slate-600 rounded text-sm">Load Demo</button>
+        </div>
+      </section>
+      <section class="bg-slate-900/50 rounded-xl border border-slate-800 p-4">
+        <h2 class="font-medium mb-2">Device Log</h2>
+        <pre id="log" class="h-80 overflow-auto text-xs"></pre>
+      </section>
+    </main>
+  </div>
+  <script>
+    async function demo() {
+      const demo = {
+        schema_version: "0.1.0",
+        metadata: { id: "demo", name: "Demo" },
+        transmission: { model: "generic", gear_count: 4 },
+        scalars: [{ name: "line_pressure_base", unit: "psi", value: 80 }],
+        tables: [],
+        io_mapping: { analog_inputs: [], digital_inputs: [], pwm_outputs: [] }
+      };
+      document.getElementById('calib').value = JSON.stringify(demo, null, 2);
+    }
+    document.getElementById('load-demo').onclick = demo;
+  </script>
+</body>
+</html>
