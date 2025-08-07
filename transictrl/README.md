@@ -1,6 +1,6 @@
 # transictrl
 
-An open, lawful, safety-first transmission controller platform.
+An open, lawful, safety-first transmission controller platform. Licensed under GPL-2.0-only.
 
 - Firmware: Rust-based, portable HAL (e.g., RP2040/RP2350, STM32, ESP32)
 - Host: Web UI served by Rust (axum), no proprietary dependencies
