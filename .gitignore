@@ -12,3 +12,8 @@ Thumbs.db
 # Dataviz-related
 node_modules
 package-lock.json
+
+# Rust build artifacts
+transictrl/target/
+**/target/
+*.rs.bk

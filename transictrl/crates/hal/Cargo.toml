@@ -1,0 +1,13 @@
+# SPDX-License-Identifier: GPL-3.0-only
+# Portions derived from 7226ctrl (c) Markus Kovero et al., GPL-3.0
+
+[package]
+name = "transictrl-hal"
+version = "0.1.0"
+edition = "2021"
+license.workspace = true
+
+[dependencies]
+
+[features]
+default = []

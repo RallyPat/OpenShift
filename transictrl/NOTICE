@@ -1,0 +1,25 @@
+OpenShift
+Copyright (C) 2025-2026 The OpenShift contributors
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, version 3 of the License.
+
+OpenShift is a fork and continuation of 7226ctrl, a transmission controller
+project originally created by Markus Kovero.
+
+Portions of this project are derived from 7226ctrl, which is licensed under
+the GNU General Public License v3.0. Those portions remain:
+  Copyright (C) Markus Kovero (mui@mui.fi) and contributors
+
+Contributors to 7226ctrl include:
+  Tuomas Kantola, Tommi Otsavaara, Mikko Kovero, Pete,
+  Jami Karvanen, Liia Ahola, Joosep Vahar, Toni Lassila,
+  Jan Blonski, and Krzysztof Dymianiuk.
+
+Third-party dependencies and their licenses are listed in the
+`transictrl/*/Cargo.toml` files and in the generated license report
+(`cargo about` or `cargo deny`).
+
+Trademarks are the property of their respective owners and are used here
+nominatively for compatibility and identification only.

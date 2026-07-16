@@ -1,0 +1,17 @@
+# SPDX-License-Identifier: GPL-3.0-only
+# Portions derived from 7226ctrl (c) Markus Kovero et al., GPL-3.0
+
+[package]
+name = "transictrl-722"
+version = "0.1.0"
+edition = "2021"
+license.workspace = true
+
+[dependencies]
+transictrl-core = { path = "../core" }
+transictrl-hal = { path = "../hal" }
+heapless = "0.8"
+serde = { version = "1", default-features = false, features = ["derive"] }
+postcard = { version = "1", default-features = false }
+
+[dev-dependencies]

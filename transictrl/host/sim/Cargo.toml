@@ -1,0 +1,23 @@
+# SPDX-License-Identifier: GPL-3.0-only
+
+[package]
+name = "sim"
+version = "0.1.0"
+edition.workspace = true
+license.workspace = true
+
+[[bin]]
+name = "sim"
+test = false
+
+[dependencies]
+transictrl-core = { path = "../../crates/core" }
+transictrl-722 = { path = "../../crates/transictrl-722" }
+transictrl-hal = { path = "../../crates/hal" }
+protocol = { path = "../../crates/protocol" }
+tokio = { workspace = true }
+clap = { workspace = true }
+anyhow = { workspace = true }
+tracing = { workspace = true }
+tracing-subscriber = { workspace = true }
+serde_json = { workspace = true }

@@ -1,14 +1,22 @@
 [workspace]
 members = [
+  "crates/core",
+  "crates/hal",
   "crates/protocol",
+  "crates/transictrl-722",
   "host/server",
-  "tools/calibration-cli"
+  "host/dataviz",
+  "host/sim",
+  "tools/calibration-cli",
+  "fw/fw-teensy4",
+  "fw/fw-rp2350",
+  "fw/fw-stm32"
 ]
 resolver = "2"
 
 [workspace.package]
 edition = "2021"
-license = "GPL-2.0-only"
+license = "GPL-3.0-only"
 
 [workspace.dependencies]
 serde = { version = "1", features = ["derive"] }

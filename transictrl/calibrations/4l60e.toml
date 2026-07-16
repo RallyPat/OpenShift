@@ -1,0 +1,180 @@
+schema_version = "0.1.0"
+
+# GM 4L60E — 4-speed RWD automatic.
+#
+# A direct-solenoid gearbox: two on/off shift solenoids (SS-A, SS-B) select the
+# gear, a current-controlled EPC solenoid sets line pressure, a PWM solenoid
+# controls torque-converter lockup and a PWM 3-2 solenoid manages the 3-2
+# downshift. This calibration describes the gear/solenoid relationship and the
+# protective limits; pressure and shift-point tables live in `tables`.
+
+[metadata]
+id = "4l60e"
+name = "GM 4L60E"
+author = "OpenShift"
+description = "Baseline 4L60E calibration: ratios, solenoid matrix, limits."
+
+[transmission]
+model = "GM 4L60E"
+gear_count = 4
+
+# --- Gearbox definition -------------------------------------------------------
+[gearbox]
+final_drive = 3.42
+# Logical shift elements, in the order each gear's `elements` array references.
+shift_elements = ["SS-A", "SS-B"]
+
+[gearbox.limits]
+ratio_tolerance = 0.08
+max_slip = 0.4
+min_battery_v = 9.0
+max_engine_rpm = 6000.0
+shift_lockout_ms = 800
+max_atf_temp_c = 150.0
+
+[gearbox.timing]
+preshift_ms = 80
+shift_ms = 450
+postshift_ms = 120
+
+# SS-A/SS-B truth table for the 4L60E:
+#   Gear 1: A applied,  B applied
+#   Gear 2: A released, B applied
+#   Gear 3: A released, B released
+#   Gear 4: A applied,  B released
+[[gearbox.gears]]
+number = 1
+ratio = 3.06
+elements = ["applied", "applied"]
+lockup_allowed = false
+
+[[gearbox.gears]]
+number = 2
+ratio = 1.63
+elements = ["released", "applied"]
+lockup_allowed = false
+
+[[gearbox.gears]]
+number = 3
+ratio = 1.00
+elements = ["released", "released"]
+lockup_allowed = true
+
+[[gearbox.gears]]
+number = 4
+ratio = 0.70
+elements = ["applied", "released"]
+lockup_allowed = true
+
+# --- Scalars ------------------------------------------------------------------
+[[scalars]]
+name = "tcc_lockup_speed_kmh"
+unit = "km/h"
+value = 70.0
+
+[[scalars]]
+name = "tcc_max_throttle_pct"
+unit = "%"
+value = 40.0
+
+# --- Tables -------------------------------------------------------------------
+# Desired gear from throttle (x) and road speed (y). Values are gear numbers.
+[[tables]]
+name = "shift_map"
+values = [
+  1.0, 1.0,
+  2.0, 1.0,
+  3.0, 2.0,
+  4.0, 3.0,
+  4.0, 4.0,
+]
+[tables.x_axis]
+label = "throttle"
+unit = "%"
+points = [0.0, 100.0]
+[tables.y_axis]
+label = "speed"
+unit = "km/h"
+points = [0.0, 30.0, 60.0, 90.0, 120.0]
+
+# Steady-state line pressure (per-mille of EPC full scale) from load (x) and
+# ATF temperature (y). Higher load -> higher pressure; cold fluid -> higher.
+[[tables]]
+name = "line_pressure"
+values = [
+  650.0, 1000.0,
+  500.0,  850.0,
+  450.0,  800.0,
+]
+[tables.x_axis]
+label = "load"
+unit = "%"
+points = [0.0, 100.0]
+[tables.y_axis]
+label = "atf_temp"
+unit = "C"
+points = [0.0, 80.0, 120.0]
+
+# Shift firmness (per-mille) from load (x) and ATF temperature (y).
+[[tables]]
+name = "shift_pressure"
+values = [
+  500.0, 900.0,
+  450.0, 800.0,
+  420.0, 780.0,
+]
+[tables.x_axis]
+label = "load"
+unit = "%"
+points = [0.0, 100.0]
+[tables.y_axis]
+label = "atf_temp"
+unit = "C"
+points = [0.0, 80.0, 120.0]
+
+# --- I/O mapping --------------------------------------------------------------
+# Logical names mapped to controller channels; the firmware resolves these to
+# physical pins/peripherals for the target board.
+[io_mapping]
+
+[[io_mapping.digital_inputs]]
+name = "brake"
+channel = 0
+active_high = true
+
+[[io_mapping.analog_inputs]]
+name = "tps"
+channel = 0
+
+[[io_mapping.analog_inputs]]
+name = "atf_temp"
+channel = 1
+
+[[io_mapping.analog_inputs]]
+name = "battery_v"
+channel = 2
+
+[[io_mapping.pwm_outputs]]
+name = "SS-A"
+channel = 0
+frequency_hz = 0
+
+[[io_mapping.pwm_outputs]]
+name = "SS-B"
+channel = 1
+frequency_hz = 0
+
+[[io_mapping.pwm_outputs]]
+name = "EPC"
+channel = 2
+frequency_hz = 1000
+
+[[io_mapping.pwm_outputs]]
+name = "TCC"
+channel = 3
+frequency_hz = 100
+
+[[io_mapping.pwm_outputs]]
+name = "3-2"
+channel = 4
+frequency_hz = 100

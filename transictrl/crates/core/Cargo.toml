@@ -1,0 +1,18 @@
+[package]
+name = "transictrl-core"
+version = "0.1.0"
+edition.workspace = true
+license.workspace = true
+description = "Hardware-independent, calibration-driven transmission control logic (no_std)."
+
+[lib]
+name = "transictrl_core"
+
+# This crate is intentionally dependency-free and no_std so the exact same
+# control logic can run on an embedded target (firmware) and on the host
+# (unit tests, simulation). Floating point helpers are implemented inline to
+# avoid pulling in libm.
+[dependencies]
+
+[features]
+default = []

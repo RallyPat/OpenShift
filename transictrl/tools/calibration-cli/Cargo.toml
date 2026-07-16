@@ -2,7 +2,7 @@
 name = "calibration-cli"
 version = "0.1.0"
 edition = "2021"
-license = "GPL-2.0-only"
+license = "GPL-3.0-only"
 
 [dependencies]
 clap.workspace = true
@@ -10,4 +10,7 @@ serde.workspace = true
 serde_json.workspace = true
 toml.workspace = true
 anyhow.workspace = true
+postcard.workspace = true
+serialport = "4"
 protocol = { path = "../../crates/protocol" }
+transictrl-722 = { path = "../../crates/transictrl-722" }

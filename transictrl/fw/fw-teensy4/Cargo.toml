@@ -1,0 +1,29 @@
+# SPDX-License-Identifier: GPL-3.0-only
+
+[package]
+name = "fw-teensy4"
+version = "0.1.0"
+edition.workspace = true
+license.workspace = true
+
+[[bin]]
+name = "fw-teensy4"
+test = false
+bench = false
+
+[dependencies]
+transictrl-hal = { path = "../../crates/hal" }
+transictrl-722 = { path = "../../crates/transictrl-722" }
+
+[target.'cfg(target_arch = "arm")'.dependencies]
+embassy-executor = { version = "0.10", features = ["platform-cortex-m", "executor-thread"] }
+embassy-time = "0.5"
+embassy-sync = "0.8"
+cortex-m = { version = "0.7", features = ["critical-section-single-core"] }
+cortex-m-rt = "0.7"
+panic-halt = "0.2"
+
+[build-dependencies]
+
+[features]
+default = []
