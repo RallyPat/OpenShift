@@ -1,0 +1,22 @@
+Output: Gerber Files
+Type  : Gerber
+From  : Variant [[No Variations]] of PCB Document [revI-auto.PcbDoc]
+   Generated File[revI-auto.GTL]
+   Generated File[revI-auto.GBL]
+   Generated File[revI-auto.GTO]
+   Generated File[revI-auto.GTP]
+   Generated File[revI-auto.GTS]
+   Generated File[revI-auto.GBS]
+   Generated File[revI-auto.GBP]
+   Generated File[revI-auto.GBO]
+   Generated File[revI-auto.GKO]
+   Generated File[revI-auto.GM1]
+   Generated File[revI-auto.RUL]
+   Generated File[revI-auto.EXTREP]
+   Generated File[revI-auto.REP]
+
+
+Files Generated   : 13
+Documents Printed : 0
+
+Finished Output Generation At 13.21.29 On 16/10/2018

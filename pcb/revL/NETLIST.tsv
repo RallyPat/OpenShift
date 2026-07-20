@@ -1,0 +1,42 @@
+GPIO	NET	FUNCTION	CLASS	CONNECTOR	CONNECTOR_PIN
+0	SOL_PWM0	Solenoid ch0 PWM (element)	PWM-OUT	SOL_OUT	1
+1	SOL_PWM1	Solenoid ch1 PWM (element)	PWM-OUT	SOL_OUT	2
+2	SOL_PWM2	Solenoid ch2 PWM (element)	PWM-OUT	SOL_OUT	3
+3	SOL_PWM3	Solenoid ch3 PWM (element)	PWM-OUT	SOL_OUT	4
+4	SOL_PWM4	Solenoid ch4 PWM (element)	PWM-OUT	SOL_OUT	5
+5	SOL_PWM5	Solenoid ch5 PWM (EPC)	PWM-OUT	SOL_OUT	6
+6	SOL_ON6	Solenoid ch6 on/off	DIG-OUT	SOL_OUT	7
+7	SOL_ON7	Solenoid ch7 on/off	DIG-OUT	SOL_OUT	8
+8	SOL_ON8	Solenoid ch8 on/off	DIG-OUT	SOL_OUT	9
+9	SOL_ON9	Solenoid ch9 on/off (TCC/aux)	DIG-OUT	SOL_OUT	10
+10	SPEED0	ISS freq capture	FREQ-IN	VR1	1
+11	SPEED1	OSS freq capture	FREQ-IN	VR1	2
+12	SPEED2	RPM/VSS freq capture	FREQ-IN	VR2	1
+13	SPI0_SCK	shared CAN+ADC SPI	SPI			
+14	SPI0_MOSI	shared CAN+ADC SPI	SPI			
+15	SPI0_MISO	shared CAN+ADC SPI	SPI			
+16	CAN_CS	MCP2518FD chip select	SPI			
+17	CAN_INT	MCP2518FD interrupt	IRQ-IN			
+18	ADC_CS	MCP3208 chip select	SPI			
+19	SPI1_SCK	OLED SPI	SPI			
+20	SPI1_MOSI	OLED SPI	SPI			
+21	OLED_CS	OLED chip select	SPI			
+22	OLED_DC	OLED D/C	SPI			
+23	OLED_RST	OLED reset	SPI			
+24	I2C_SDA	PCA9555+FRAM/sensors	I2C			
+25	I2C_SCL	PCA9555+FRAM/sensors	I2C			
+26	ADC0_TPS	TPS throttle	ANALOG-IN	SENS_IN	1
+27	ADC1_ATF	ATF temperature	ANALOG-IN	SENS_IN	2
+28	ADC2_BAT	Battery voltage	ANALOG-IN	PWR	sense
+29	ADC3_OIL	Oil/boost spare	ANALOG-IN	SENS_IN	3
+30	STICK0	gearstick digital in	DIG-IN	SENS_IN	4
+31	STICK1	gearstick digital in	DIG-IN	SENS_IN	5
+32	STICK2	gearstick digital in	DIG-IN	SENS_IN	6
+33	STICK3	gearstick digital in	DIG-IN	SENS_IN	7
+34	STICK4_AUTO	gearstick / auto switch	DIG-IN	SENS_IN	8
+35	ENC_A	rotary encoder A	DIG-IN			
+36	ENC_B	rotary encoder B	DIG-IN			
+37	ENC_SW	rotary button	DIG-IN			
+38	RUN_LED	status LED	DIG-OUT			
+39	SPARE	breakout	DIG			
+40-47	(QSPI FLASH)	reserved W25Q128	FLASH			

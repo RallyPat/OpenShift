@@ -17,6 +17,8 @@
 
 use core::fmt;
 
+pub mod can;
+pub mod current_pi;
 pub mod framing;
 
 /// A single digital output line (e.g. shift solenoid enable).

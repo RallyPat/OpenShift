@@ -1,0 +1,21 @@
+Output: Gerber Files
+Type  : Gerber
+From  : Variant [[No Variations]] of PCB Document [revD.pcbdoc]
+   Generated File[revD.GTL]
+   Generated File[revD.GBL]
+   Generated File[revD.GTO]
+   Generated File[revD.GTP]
+   Generated File[revD.GTS]
+   Generated File[revD.GBS]
+   Generated File[revD.GBP]
+   Generated File[revD.GBO]
+   Generated File[revD.GKO]
+   Generated File[revD.RUL]
+   Generated File[revD.EXTREP]
+   Generated File[revD.REP]
+
+
+Files Generated   : 12
+Documents Printed : 0
+
+Finished Output Generation At 20.26.02 On 03/09/2018

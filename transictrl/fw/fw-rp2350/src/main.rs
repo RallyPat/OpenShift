@@ -11,7 +11,11 @@
 #[cfg(target_arch = "arm")]
 mod board;
 #[cfg(target_arch = "arm")]
+mod can;
+#[cfg(target_arch = "arm")]
 mod hal_impl;
+#[cfg(target_arch = "arm")]
+mod rev_l;
 
 #[cfg(target_arch = "arm")]
 use panic_halt as _;

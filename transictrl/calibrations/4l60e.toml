@@ -135,6 +135,18 @@ points = [0.0, 80.0, 120.0]
 # --- I/O mapping --------------------------------------------------------------
 # Logical names mapped to controller channels; the firmware resolves these to
 # physical pins/peripherals for the target board.
+#
+# revL physical mapping (see pcb/revL/DESIGN.md §10.1). Logical channel here
+# resolves to the revL board channel below. SS-A/SS-B are on/off; EPC is
+# closed-loop current-controlled (Group A, INA240); TCC/3-2 are open-loop PWM
+# (Group A superset). All fit within the board's 10 channels.
+#
+#   logical  name   ->  revL ch  driver
+#   0        SS-A   ->  6        B (on/off)
+#   1        SS-B   ->  7        B (on/off)
+#   2        EPC    ->  5        A (closed-loop current)
+#   3        TCC    ->  0        A (open-loop PWM)
+#   4        3-2    ->  1        A (open-loop PWM)
 [io_mapping]
 
 [[io_mapping.digital_inputs]]

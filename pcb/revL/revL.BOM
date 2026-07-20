@@ -1,0 +1,61 @@
+Bill of Material for OpenShift revL
+Generated 2026-07-17 — DESIGN.md v0.1 (pre-layout, reference BOM)
+
+ Header             Pattern            Qty  Ref / Notes
+------------------------------------------------------------------------------
+                                    -- MCU & MEMORY --
+ RP2350B            QFN-60              1    U1   (48 GPIO, dual-core; MUST be B variant)
+ W25Q128JV          SOIC-8 / WSON-8     1    U2   16 MB QSPI flash
+                                    -- POWER --
+ TPS54331DDA        SOP-8 (PowerPad)    1    U3   5V buck, >=2A (replaces 7805x2)
+ AP2112-3.3         SOT-23-5            1    U4   3.3V LDO for RP2350 core/analog
+ LM74610QDGKR       MSOP-8              1    U5   ideal-diode controller (reverse-polarity)  [NEW]
+ P-FET / Schottky   SOT-23 / SMA        1    Q_PWR ideal-diode pass element for LM74610 (or P-FET+Schottky)
+ Inductor 22uH/3A   SMD                 1    L1   buck inductor
+ 1000uF 25V         SMD e-cap           1    C9   12V bulk (carried from revK)
+ 100nF / 1uF        0603                10+  C*   local decoupling per driver + rails
+                                    -- SOLENOID DRIVERS: GROUP A (6x current-controlled) --
+ AOD4184A           SOT-223              6    Q1-Q6   low-side N-MOSFET, logic-level
+ INA240A2PWR        MSOP-8               6    U10-U15 bidirectional current-sense amp
+ Sense R 50mOhm 1%  1206 (>=1W)          6    R_SENSE0..5  current-sense resistors
+ SMAJ18A            SMA                  6    D_TVS0..5  flyback TVS (supersedes 1N4001)
+ 100R gate          0603                 6    R_GATE0..5
+                                    -- SOLENOID DRIVERS: GROUP B (4x on/off) --
+ AOD4184A / AO3400A SOT-223 / SOT-23     4    Q7-Q10  low-side N-MOSFET
+ SS54 Schottky      SMA                  4    D_FB6..9  flyback
+ 10k gate pulldown  0603                 4    R_PD6..9  power-on safety pulldown
+ 100R gate          0603                 4    R_GATE6..9
+                                    -- SPEED SENSORS (3 channels from 2x MAX9926) --
+ MAX9926UAEE+       QSOP-16              2    U6,U7    2-channel VR conditioner (use 3 of 4 ch)
+ 0R jumper          0603                 2    R_N2STRAP,R_N3STRAP  N2/N3 series fix [NEW vs all revs]
+                                    -- EXTERNAL ADC (MCP3208, 8ch) --
+ MCP3208-CI/P       PDIP-8 / SOIC-16     1    U8   6x current feedback + line pressure + EGT
+                                    -- CAN-FD --
+ MCP2518FD-I/ST     TSSOP-20             1    U9   CAN-FD controller (SPI)
+ MCP2562FD-H/SN     SOIC-8               1    U16  CAN-FD transceiver
+ 120R termination   0603                 1    R_CAN  + 0R jumper to disable at non-end nodes
+                                    -- I/O EXPANDER (status LEDs) --
+ PCA9555PW          TSSOP-24             1    U17  16-bit I2C (drives 10-12 channel LEDs)
+ LED-0805           LED-0805             12   LED1-LED12  per-channel status (on expander)
+ 1k LED resistor    0603                 12   R_LED1..12
+                                    -- OPTIONAL PERSISTENCE --
+ FM25V05-G          SOIC-8               0-1  U18  (option) I2C FRAM, wear-free adaption writes
+                                    -- DISPLAY --
+ OLED 0.96" SSD1306 module               0-1  DISP SPI (header, 5-pin) — carried from revH/K
+                                    -- CONNECTORS --
+ POWER/12V in       screw terminal KF301-2P  1  PWR   12V+GND (heavy), fused 10A
+ SOLENOID out       screw terminal KF301-12P or 2x6 1  SOL_OUT  10 solenoid returns + 12V sw + GND
+ SENSOR/general in  HDR-2x10/2.54          1  SENS_IN  16-20 pin (enlarged holes, fixes revH)
+ VR input 1         HDR-4X1/2.54           1  VR1   ISS + OSS
+ VR input 2         HDR-4X1/2.54           1  VR2   RPM/VSS + spare
+ CAN/serial         HDR-4X1/2.54           1  COMM  CAN_H/CAN_L/GND/+12V
+                                    -- MECHANICAL --
+ Mounting hole M3   NPTH 3.2mm            4    MH1-4  non-plated
+
+Notes:
+- All resistors/caps default 0603, 1% / X7R unless noted.
+- Gate-driver ICs (TC4427/LM5111) optional on ch4/ch5 if Miller plateau at
+  3.3V drive proves problematic on the two highest-current channels — populate
+  on first-article testing if needed (footprint TBD in layout).
+- This BOM is a reference for component selection; finalize vendors/MPNs and
+  quantities (multiples + spares) during EDA placement.

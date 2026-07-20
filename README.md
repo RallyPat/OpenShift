@@ -86,10 +86,15 @@ portability, and lawful interoperability.
 - **transictrl-722** — GPL-3.0-derived crate that ports the 722.6-specific shift
   planning, sensor scaling, W202 gearstick decoding, and map data from `main/`
 - **transictrl-hal** — board-agnostic hardware abstraction traits for solenoids,
-  PWM, ADC, frequency capture, CAN, persistent storage, serial, and display
+  PWM, ADC, frequency capture, CAN, persistent storage, serial, and display.
+  Includes host-testable control primitives: an anti-windup PI current
+  controller (`current_pi`) and a lock-free CAN receive ring + ID filter (`can`)
 - **Firmware** — portable HAL + embassy runtime for RP2040/RP2350 and STM32F4
   (`fw-rp2350`, `fw-stm32`); Teensy 4 (`fw-teensy4`) is a skeleton awaiting a
-  suitable embassy-compatible HAL
+  suitable embassy-compatible HAL. `fw-rp2350` implements `OutputPin`, `PwmOutput`,
+  `SolenoidCurrent` (closed-loop, INA240/MCP3208), `AdcChannel`,
+  `FrequencyCapture`, `PersistentStore`, `CanBus` (MCP2518FD), `SerialLink`, and
+  `MonotonicClock`, and ships a revL universal-carrier pin config (`rev_l`)
 - **Host** — axum web server with a serial→WebSocket telemetry bridge, a device
   simulator, and a calibration validation endpoint; Rust egui dataviz app in
   `transictrl/host/dataviz`
@@ -136,13 +141,26 @@ voltage. External datalogging is planned to add GPS location and 3-axis accelera
 
 ## Hardware / PCB
 
-Gerber files and BOMs are available under `pcb/` with three tested, working revisions
-(H, I, K). Firmware is compatible across all revisions. See [`pcb/README.md`](pcb/README.md)
+Gerber files and BOMs are available under `pcb/` with three tested, working
+through-hole/SMD revisions (H, I, K) targeting the 722.6 on a Teensy 3.5.
+Firmware is compatible across those revisions. See [`pcb/README.md`](pcb/README.md)
 for revision notes and assembly caveats. Assembly instructions are welcome as
 contributions.
 
 - Working PCB (rev H): <http://www.mui.fi/pcb-valmis.jpg>
 - SMD revision (rev K): <http://www.mui.fi/smd-revk.jpg>
+
+**revL — universal multi-transmission controller (in design, pre-layout):** a
+new SMD board built around the **RP2350B** that drives *any* supported
+transmission (4L60E/4L80E, 722.6, 6L80, 4R70W, ZF 8HP, GM/Ford 10-speed) by
+exposing a superset of actuator/sensor channels addressed by the `transictrl`
+calibration `io_mapping` model. Highlights: 6 current-controlled + 4 on/off
+solenoid drivers, 3 VR/Hall speed inputs, CAN-FD (MCP2518FD), external SPI ADC
+(MCP3208) for current feedback, I²C LED expander, a buck regulator replacing
+the 7805, and reverse-polarity protection. Bring-up target is the **4L60E**
+(the only unit on hand). Full spec, BOM, netlist and a reference outline Gerber
+live in [`pcb/revL/`](pcb/revL/DESIGN.md). EDA routing is the remaining
+handoff task.
 
 ---
 

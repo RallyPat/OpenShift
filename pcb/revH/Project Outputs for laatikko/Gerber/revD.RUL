@@ -1,0 +1,5 @@
+DRC Rules Export File for PCB: \\192.168.1.104\markus's Public Folder\laatikko-tommi-23-06-18\mui\Documents\revD.pcbdoc
+RuleKind=SolderMaskExpansion|RuleName=SolderMaskExpansion|Scope=Board|Minimum=4.00
+RuleKind=Width|RuleName=Width|Scope=Board|Minimum=10.00
+RuleKind=Clearance|RuleName=Clearance|Scope=Board|Minimum=10.00
+RuleKind=ShortCircuit|RuleName=ShortCircuit|Scope=Board|Allowed=0

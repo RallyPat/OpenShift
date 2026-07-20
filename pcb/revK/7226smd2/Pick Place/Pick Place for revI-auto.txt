@@ -1,0 +1,178 @@
+Altium Designer Pick and Place Locations
+C:\Users\mui\Documents\7226smd2\Pick Place\Pick Place for revI-auto.txt
+
+========================================================================================================================
+File Design Information:
+
+Date:       16/10/18
+Time:       13.21
+Revision:   Not in VersionControl
+Variant:    No variations
+Units used: mm
+
+Designator         Comment              Layer    Footprint        Center-X(mm) Center-Y(mm) Rotation Description               
+PWR1 12V/5V/NC/GND POWER                TopLayer HDR1X4           98.370       104.600      180      mates with 538-90123-0104 
+U7                 CD4504               TopLayer CD4504BPW        41.952       47.200       270      Header, 8-Pin, Dual row   
+C6                 330nF                TopLayer 0805_cap         46.400       104.400      360      0805 25VDC X8R 10%        
+C5                 100nF                TopLayer 0805_cap         39.500       104.400      180      0805 250VDC X7T 20%       
+C1                 1nF                  TopLayer 0805_cap         82.900       77.750       90       0805 450VDC C0G 5%        
+C2                 1nF                  TopLayer 0805_cap         88.200       77.700       90       0805 450VDC C0G 5%        
+C3                 1nF                  TopLayer 0805_cap         39.700       77.700       90       0805 450VDC C0G 5%        
+C4                 1nF                  TopLayer 0805_cap         45.800       77.700       270      0805 450VDC C0G 5%        
+C7                 100nF                TopLayer 0805_cap         89.700       98.950       90       0805 250VDC X7T 20%       
+C8                 330nF                TopLayer 0805_cap         82.900       92.700       180      0805 25VDC X8R 10%        
+C9                 1000uF               TopLayer 1000UF_PANASONIC 91.900       90.300       90       Radial 25V 20%            
+C10                100nF                TopLayer 0805_cap         85.800       78.650       270      0805 250VDC X7T 20%       
+C11                100nF                TopLayer 0805_cap         42.500       78.700       270      0805 250VDC X7T 20%       
+CANBUS/SERIAL1     EXT CONN             TopLayer HDR1X4           48.800       90.710       90       mates with 538-90123-0104 
+D17                AQ4020               TopLayer AQ4020           28.600       84.660       90                                 
+D16                1N5819HW             TopLayer 1N5819HW         7.400        87.300       90                                 
+D21                AQ4020               TopLayer AQ4020           28.500       58.700       90                                 
+D20                1N5819HW             TopLayer 1N5819HW         7.400        61.900       90                                 
+D25                AQ4020               TopLayer AQ4020           28.600       32.700       90                                 
+D24                1N5819HW             TopLayer 1N5819HW         7.400        36.200       90                                 
+D18                AQ4020               TopLayer AQ4020           28.600       98.600       90                                 
+D15                1N5819HW             TopLayer 1N5819HW         7.400        100.000      90                                 
+D22                AQ4020               TopLayer AQ4020           28.600       72.100       90                                 
+D19                1N5819HW             TopLayer 1N5819HW         7.400        74.600       90                                 
+D26                AQ4020               TopLayer AQ4020           28.500       45.600       90                                 
+D23                1N5819HW             TopLayer 1N5819HW         7.400        49.300       90                                 
+D5                 AQ4020               TopLayer AQ4020           100.900      84.660       270                                
+D4                 1N5819HW             TopLayer 1N5819HW         121.800      87.300       90                                 
+D9                 AQ4020               TopLayer AQ4020           100.900      58.700       270                                
+D8                 1N5819HW             TopLayer 1N5819HW         121.800      61.500       90                                 
+D13                AQ4020               TopLayer AQ4020           100.900      32.700       270                                
+D12                1N5819HW             TopLayer 1N5819HW         121.800      35.800       90                                 
+D6                 AQ4020               TopLayer AQ4020           100.900      98.600       270                                
+D3                 1N5819HW             TopLayer 1N5819HW         121.800      100.000      90                                 
+D10                AQ4020               TopLayer AQ4020           100.900      72.100       270                                
+D7                 1N5819HW             TopLayer 1N5819HW         121.800      74.300       90                                 
+D14                AQ4020               TopLayer AQ4020           100.900      45.600       270                                
+D11                1N5819HW             TopLayer 1N5819HW         121.800      48.800       90                                 
+Display1           to OLED display      TopLayer HDR1X8           63.385       104.600      180      mates with 538-22-01-2087 
+GENERAL INPUT1     Sensor/General INPUT TopLayer HDR1X16          63.770       27.000       360      mates with 538-50579016   
+LED8               LED                  TopLayer 0603             29.100       88.100       180                                
+LED10              LED                  TopLayer 0603             29.200       62.100       180                                
+LED12              LED                  TopLayer 0603             29.200       36.100       180                                
+LED7               LED                  TopLayer 0603             29.200       101.900      180                                
+LED9               LED                  TopLayer 0603             29.300       75.500       180                                
+LED11              LED                  TopLayer 0603             29.100       49.100       180                                
+LED2               LED                  TopLayer 0603             100.200      88.100       360                                
+LED4               LED                  TopLayer 0603             100.300      62.100       360                                
+LED6               LED                  TopLayer 0603             100.300      36.100       360                                
+LED1               LED                  TopLayer 0603             100.300      102.000      360                                
+LED3               LED                  TopLayer 0603             100.200      75.300       360                                
+LED5               LED                  TopLayer 0603             100.400      49.000       360                                
+P1                 VR INPUT2            TopLayer HDR1X4           38.000       60.730       270      mates with 538-90123-0104 
+P2                 VR INPUT1            TopLayer HDR1X4           90.100       60.730       270      mates with 538-90123-0104 
+R1                 10k                  TopLayer 0603             80.200       77.100       270      0603 5% 100mW             
+R2                 10k                  TopLayer 0603             90.100       69.600       90       0603 5% 100mW             
+R3                 10k                  TopLayer 0603             37.500       77.100       270      0603 5% 100mW             
+R4                 10k                  TopLayer 0603             47.700       69.600       90       0603 5% 100mW             
+R5                 10k                  TopLayer 0603             80.600       69.600       90       0603 5% 100mW             
+R6                 10k                  TopLayer 0603             90.500       76.900       270      0603 5% 100mW             
+R7                 10k                  TopLayer 0603             38.000       69.600       90       0603 5% 100mW             
+R8                 10k                  TopLayer 0603             48.000       76.400       270      0603 5% 100mW             
+R9                 4.7k                 TopLayer 0603             80.600       73.400       270      0603 5% 100mW             
+R10                4.7k                 TopLayer 0603             90.100       73.100       270      0603 5% 100mW             
+R11                4.7k                 TopLayer 0603             38.000       73.200       270      0603 5% 100mW             
+R12                4.7k                 TopLayer 0603             47.700       73.200       270      0603 5% 100mW             
+R13                1k                   TopLayer 0603             80.097       30.900       90       0603 5% 100mW             
+R14                1k                   TopLayer 0603             83.755       30.900       90       0603 5% 100mW             
+R15                1k                   TopLayer 0603             87.413       30.900       90       0603 5% 100mW             
+R16                1k                   TopLayer 0603             91.071       30.900       90       0603 5% 100mW             
+R17                1.8k                 TopLayer 0603             81.926       30.900       270      0603 5% 100mW             
+R18                1.8k                 TopLayer 0603             85.584       30.900       270      0603 5% 100mW             
+R19                1.8k                 TopLayer 0603             89.200       30.900       270      0603 5% 100mW             
+R20                1.8k                 TopLayer 0603             92.900       30.900       270      0603 5% 100mW             
+R21                220ohm               TopLayer 0603             67.294       30.900       270      0603 5% 100mW             
+R22                1k                   TopLayer 0603             69.123       30.900       90       0603 5% 100mW             
+R23                1k                   TopLayer 0603             72.781       30.900       90       0603 5% 100mW             
+R24                1k                   TopLayer 0603             76.439       30.900       90       0603 5% 100mW             
+R25                1k                   TopLayer 0603             65.465       30.900       90       0603 5% 100mW             
+R26                1.8k                 TopLayer 0603             70.952       30.900       270      0603 5% 100mW             
+R27                1.8k                 TopLayer 0603             74.610       30.900       270      0603 5% 100mW             
+R28                280ohm               TopLayer 0603             78.268       30.900       270      0603 5% 100mW             
+D2                 miniSMDC110F/24      TopLayer miniSMDC110F/24  93.400       99.300       270                                
+R30                1.8k                 TopLayer 0603             61.806       30.900       270      0603 5% 100mW             
+R31                1k                   TopLayer 0603             63.635       30.900       90       0603 5% 100mW             
+R32                4.7kohm              TopLayer 0603             86.000       61.100       90       0603 5% 100mW             
+R33                4.7kohm              TopLayer 0603             43.300       61.100       90       0603 5% 100mW             
+R37                4.7kohm              TopLayer 0603             84.300       61.100       90       0603 5% 100mW             
+R35                4.7kohm              TopLayer 0603             41.700       61.100       90       0603 5% 100mW             
+R36                380                  TopLayer 0603             58.148       30.900       270      0603 1% 100mW             
+R38                1k                   TopLayer 0603             59.977       30.900       90       0603 5% 100mW             
+R39                380                  TopLayer 0603             54.490       30.900       270      0603 1% 100mW             
+R42                1k                   TopLayer 0603             56.319       30.900       90       0603 5% 100mW             
+R47                380                  TopLayer 0603             50.832       30.900       270      0603 1% 100mW             
+R48                1k                   TopLayer 0603             52.661       30.900       90       0603 5% 100mW             
+R51                380                  TopLayer 0603             49.003       30.900       270      0603 1% 100mW             
+R56                1k                   TopLayer 0603             47.174       30.900       90       0603 5% 100mW             
+R57                380                  TopLayer 0603             45.345       30.900       270      0603 1% 100mW             
+R64                1k                   TopLayer 0603             43.516       30.900       90       0603 5% 100mW             
+R65                380                  TopLayer 0603             40.000       30.900       270      0603 1% 100mW             
+R66                1k                   TopLayer 0603             41.687       30.900       90       0603 5% 100mW             
+R67                380                  TopLayer 0603             36.200       30.900       270      0603 1% 100mW             
+R68                1k                   TopLayer 0603             37.900       30.900       90       0603 5% 100mW             
+R73                2k                   TopLayer 0603             31.600       87.800       90       0603 5% 100mW             
+R74                10k                  TopLayer 0603             29.300       81.000       360      0603 5% 100mW             
+R70                100                  TopLayer 0603             31.600       81.427       270      0603 5% 100mW             
+R79                2k                   TopLayer 0603             31.600       61.955       90       0603 5% 100mW             
+R80                10k                  TopLayer 0603             29.100       55.100       360      0603 5% 100mW             
+R76                100                  TopLayer 0603             31.600       55.200       270      0603 5% 100mW             
+R85                2k                   TopLayer 0603             31.600       35.891       90       0603 5% 100mW             
+R86                10k                  TopLayer 0603             29.200       29.300       360      0603 5% 100mW             
+R82                100                  TopLayer 0603             31.600       29.500       270      0603 5% 100mW             
+R72                2k                   TopLayer 0603             31.600       101.600      90       0603 5% 100mW             
+R71                10k                  TopLayer 0603             29.100       94.700       360      0603 5% 100mW             
+R69                100                  TopLayer 0603             31.600       94.800       270      0603 5% 100mW             
+R78                2k                   TopLayer 0603             31.600       75.236       90       0603 5% 100mW             
+R77                10k                  TopLayer 0603             29.300       68.800       360      0603 5% 100mW             
+R75                100                  TopLayer 0603             31.600       68.845       270      0603 5% 100mW             
+R84                2k                   TopLayer 0603             31.600       48.973       90       0603 5% 100mW             
+R83                10k                  TopLayer 0603             29.200       42.100       360      0603 5% 100mW             
+R81                100                  TopLayer 0603             31.600       42.582       270      0603 5% 100mW             
+R45                2k                   TopLayer 0603             98.000       88.000       90       0603 5% 100mW             
+R46                10k                  TopLayer 0603             100.200      81.000       180      0603 5% 100mW             
+R41                100                  TopLayer 0603             98.000       81.427       270      0603 5% 100mW             
+R54                2k                   TopLayer 0603             98.000       61.955       90       0603 5% 100mW             
+R55                10k                  TopLayer 0603             100.300      55.200       180      0603 5% 100mW             
+R50                100                  TopLayer 0603             98.000       55.564       270      0603 5% 100mW             
+R62                2k                   TopLayer 0603             98.000       35.300       90       0603 5% 100mW             
+R63                10k                  TopLayer 0603             100.300      29.100       180      0603 5% 100mW             
+R59                100                  TopLayer 0603             98.000       29.400       270      0603 5% 100mW             
+R44                2k                   TopLayer 0603             98.000       101.600      90       0603 5% 100mW             
+R43                10k                  TopLayer 0603             100.200      94.700       180      0603 5% 100mW             
+R40                100                  TopLayer 0603             98.000       94.800       270      0603 5% 100mW             
+R53                2k                   TopLayer 0603             98.000       75.236       90       0603 5% 100mW             
+R52                10k                  TopLayer 0603             100.300      68.700       180      0603 5% 100mW             
+R49                100                  TopLayer 0603             98.000       68.845       270      0603 5% 100mW             
+R61                2k                   TopLayer 0603             98.000       48.973       90       0603 5% 100mW             
+R60                10k                  TopLayer 0603             100.200      42.200       180      0603 5% 100mW             
+R58                100                  TopLayer 0603             98.000       42.582       270      0603 5% 100mW             
+U6                 CD4504               TopLayer CD4504BPW        84.686       47.200       270      Header, 8-Pin, Dual row   
+U3                 7805                 TopLayer 7805_DPAK_old    42.957       96.245       180                                
+U1                 MAX9926UAEE+         TopLayer QSOP-16_150MIL   85.260       71.699       90                                 
+U2                 MAX9926UAEE+         TopLayer QSOP-16_150MIL   42.526       71.701       90                                 
+U4                 7805                 TopLayer 7805_DPAK_old    84.800       99.444       360                                
+C13                100nF                TopLayer 0805_cap         74.200       99.700       90       0805 250VDC X7T 20%       
+U5                 Teensy 3.5           TopLayer TEENSY_3.5       63.520       66.690       270                                
+D1                 miniSMDC110F/24      TopLayer miniSMDC110F/24  36.100       99.300       90                                 
+C12                100nF                TopLayer 0805_cap         45.900       51.300       90       0805 250VDC X7T 20%       
+C14                100nF                TopLayer 0805_cap         88.600       51.300       270      0805 250VDC X7T 20%       
+R29                1.8k                 TopLayer 0603             65.500       33.900       90       0603 5% 100mW             
+R34                4.7k                 TopLayer 0603             63.600       33.900       270      0603 5% 100mW             
+D27                1N5819HW             TopLayer 1N5819HW         96.500       99.000       270                                
+D28                1N5819HW             TopLayer 1N5819HW         37.200       93.500       90                                 
+Q7                 IRF540N              TopLayer IFR540NS         19.600       98.359       180                                
+Q8                 IRF540N              TopLayer IFR540NS         19.600       85.359       180                                
+Q9                 IRF540N              TopLayer IFR540NS         19.600       72.359       180                                
+Q10                IRF540N              TopLayer IFR540NS         19.600       59.359       180                                
+Q11                IRF540N              TopLayer IFR540NS         19.600       46.259       180                                
+Q12                IRF540N              TopLayer IFR540NS         19.600       33.359       180                                
+Q1                 IRF540N              TopLayer IFR540NS         109.750      98.359       360                                
+Q2                 IRF540N              TopLayer IFR540NS         109.750      85.359       360                                
+Q3                 IRF540N              TopLayer IFR540NS         109.750      72.359       360                                
+Q4                 IRF540N              TopLayer IFR540NS         109.750      59.359       360                                
+Q5                 IRF540N              TopLayer IFR540NS         109.750      46.259       360                                
+Q6                 IRF540N              TopLayer IFR540NS         109.750      33.400       360                                

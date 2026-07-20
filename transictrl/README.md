@@ -7,7 +7,10 @@ An open, lawful, safety-first transmission controller platform. Licensed under G
 - **722.6 logic** — GPL-3.0-derived port of the original `7226ctrl` control
   strategy, sensor scaling, and map data (`transictrl-722`)
 - **HAL** — board-agnostic traits for solenoids, PWM, ADC, frequency capture,
-  CAN, persistent storage, serial, and display (`transictrl-hal`)
+  CAN, persistent storage, serial, and display (`transictrl-hal`). Includes
+  host-testable, `#![forbid(unsafe_code)]`, dependency-free control primitives:
+  - `current_pi` — anti-windup PI controller for closed-loop `SolenoidCurrent`
+  - `can` — lock-free SPSC CAN receive ring + ID/mask acceptance filter
 - **Firmware** — embassy-based concrete HALs and main loops for RP2350
   (`fw-rp2350`) and STM32F4 (`fw-stm32`); Teensy 4 (`fw-teensy4`) is a skeleton
 - **Host** — web UI served by Rust (axum), a native egui dataviz app, a device
@@ -39,6 +42,20 @@ Legal: No proprietary code or reverse-engineered material included.
 US Shift format compatibility is via user-provided mapping/import modules loaded at runtime; we do not ship proprietary parsers.
 
 Not for on-road use without compliance with local laws.
+
+## Current status
+
+`cargo test --workspace` — **79 host-side tests passing** across core, hal,
+protocol, and 722 crates.
+
+`fw-rp2350` HAL trait coverage: `OutputPin`, `PwmOutput`, `SolenoidCurrent`
+(closed-loop via INA240 + MCP3208 + `current_pi`), `AdcChannel`,
+`FrequencyCapture`, `PersistentStore`, `CanBus` (MCP2518FD + `can` ring),
+`SerialLink`, `MonotonicClock`. `Display` (SPI OLED) remains to be implemented.
+
+revL universal-carrier board support (`src/rev_l.rs`) defines the
+`RevLPinConfig` netlist for the RP2350B multi-transmission board — see
+[`pcb/revL/DESIGN.md`](../pcb/revL/DESIGN.md). Bring-up target is the **4L60E**.
 
 ## Quick start
 

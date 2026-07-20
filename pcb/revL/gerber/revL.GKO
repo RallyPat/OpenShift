@@ -1,0 +1,30 @@
+G04 OpenShift revL — reference board outline (keep-out layer) *
+G04 Derived from revK envelope; 120.0 x 100.0 mm, 4-layer SMD. *
+G04 Format: FS LA 4 4 = 4.4 fixed-point, metric (mm); divide coords by 10000. *
+G04 Coordinates: X 5.00mm -> 125.00mm, Y 25.00mm -> 125.00mm. *
+G04 Aperture D10 = 0.200mm round (outline track). *
+G04 Layer_Color=16711935*
+%FSLAX44Y44*%
+%MOMM*%
+G71*
+G01*
+G75*
+%ADD10C,0.2000*%
+D10*
+G04 --- Board outline rectangle (clockwise) ---*
+X50000Y25000D02*
+X125000Y25000D01*
+X125000Y125000D01*
+X50000Y125000D01*
+X50000Y25000D01*
+G04 --- Mounting holes M3 (non-plated, note: NC drill handles holes) ---*
+G04 Corner offsets 5mm inboard. Centers: (10,30)(120,30)(120,120)(10,120) mm.*
+X10000Y30000D02*
+X10000Y30000D01*
+X120000Y30000D02*
+X120000Y30000D01*
+X120000Y120000D02*
+X120000Y120000D01*
+X10000Y120000D02*
+X10000Y120000D01*
+M02*
